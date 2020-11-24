@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/novigrad"
+    tools:context=".AjoutServices">
+
+    <EditText
+        android:id="@+id/etNomService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="112dp"
+        android:background="#9EE43535"
+        android:ems="10"
+        android:hint="Enter the name of the service"
+        android:inputType="textPersonName"
+        android:textColor="#EFDEDE"
+        android:textColorHint="#DC9C9C"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#9EE43535"
+        android:text="Entrez le nom du service"
+        android:textColor="#EFDEDE"
+        android:textColorHint="#DC9C9C"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etNomService" />
+
+    <EditText
+        android:id="@+id/etListe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:background="#9EE43535"
+        android:ems="10"
+        android:hint="Enter the required documents"
+        android:inputType="textPersonName"
+        android:textColor="#EFDEDE"
+        android:textColorHint="#DC9C9C"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#9EE43535"
+        android:text="Entrez les documents requis séparés par une virgule"
+        android:textColor="#EFDEDE"
+        android:textColorHint="#DC9C9C"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etListe" />
+
+    <EditText
+        android:id="@+id/etTypeDeFormulaire"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:background="#9EE43535"
+        android:ems="10"
+        android:hint=" Enter the required form"
+        android:inputType="textPersonName"
+        android:textColor="#EFDEDE"
+        android:textColorHint="#DC9C9C"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="#9EE43535"
+        android:text="Entez classique pour le formulaire nom,prenom,dateDeNaissance,"
+        android:textColor="#EFDEDE"
+        android:textColorHint="#DC9C9C"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etTypeDeFormulaire" />
+
+    <Button
+        android:id="@+id/btnAjout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#9F2121"
+        android:text="Ajouter/Mettre à jour"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:layout_constraintVertical_bias="0.296" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

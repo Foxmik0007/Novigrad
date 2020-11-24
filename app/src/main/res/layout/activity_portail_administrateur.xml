@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/novigrad"
+    android:orientation="vertical"
+    tools:context=".PortailAdministrateur">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:fontFamily="sans-serif-thin"
+        android:shadowColor="#ECE1E1"
+        android:text="Bienvenu Administrateur. Que souhaitez vous faire ?"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#CCB0B0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnGestionClient"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginTop="124dp"
+        android:text="Gerer les comptes Client"
+        android:textColor="#E8DFDF"
+        android:textColorLink="#954D4D"
+        app:backgroundTint="#E91E63"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <Button
+        android:id="@+id/btnGestionSuccursales"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:backgroundTint="#E91E63"
+        android:text="Gerer Les COMPTES Succursales"
+        android:textColor="#E8DFDF"
+        android:textColorLink="#954D4D"
+        app:backgroundTint="#E91E63"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnGestionClient" />
+
+    <Button
+        android:id="@+id/btnCreationServices"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:backgroundTint="#E91E63"
+        android:text="Creer/Modifier des services"
+        android:textColor="#E8DFDF"
+        android:textColorLink="#954D4D"
+        app:backgroundTint="#E91E63"
+        app:layout_constraintTop_toBottomOf="@+id/btnGestionSuccursales" />
+
+    <Button
+        android:id="@+id/btnModificationServices"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:backgroundTint="#E91E63"
+        android:text="Voir Liste"
+        android:textColor="#E8DFDF"
+        android:textColorHighlight="#512D2D"
+        android:textColorLink="#954D4D"
+        app:backgroundTint="#E91E63"
+        app:layout_constraintTop_toBottomOf="@+id/btnCreationServices" />
+
+    <Button
+        android:id="@+id/btnSuppressionServices"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_marginBottom="104dp"
+        android:text="SUPPRIMER des SERVICES"
+        android:textColor="#E8DFDF"
+        app:backgroundTint="#F43636"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnModificationServices"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

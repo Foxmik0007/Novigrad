@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.novigrad30">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".VoirDemandes"></activity>
+        <activity android:name=".VoirServices" />
+        <activity android:name=".SupprimerServiceSuccursale" />
+        <activity android:name=".HeureDialog" />
+        <activity android:name=".AjoutHeureSuccursale" />
+        <activity android:name=".PortailClient" />
+        <activity android:name=".ServiceDialogue" />
+        <activity android:name=".HeureDeTravail" />
+        <activity android:name=".AddServiceSuccursale" />
+        <activity android:name=".PortailSuccursale" />
+        <activity android:name=".loading">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".updateDialogue" />
+        <activity android:name=".changerService" />
+        <activity android:name=".ModifyService" />
+        <activity android:name=".SeeSeriveActivity" />
+        <activity android:name=".EmployeRg" />
+        <activity android:name=".ClientRg" />
+        <activity android:name=".SignUPRedirection" />
+        <activity android:name=".ListesDesServices" />
+        <activity android:name=".SuppressionDeServices" />
+        <activity android:name=".ModifierLesServices" />
+        <activity android:name=".AjoutServices" />
+        <activity android:name=".PortailAdministrateur" />
+        <activity android:name=".MainActivity" />
+    </application>
+
+</manifest>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/novigrad"
+    tools:context=".EmployeRg">
+
+
+    <EditText
+        android:id="@+id/SuccursaleName"
+        android:layout_width="332dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/ic_baseline_location"
+        android:drawablePadding="7dp"
+        android:ems="10"
+        android:hint="Entrez le nom de votre Succursale"
+        android:inputType="textPersonName"
+        android:paddingStart="7dp"
+        android:paddingEnd="7dp"
+        android:textColor="#EAD2D2"
+        android:textColorHint="#E3A7A7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.443"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reg_password" />
+
+    <EditText
+        android:id="@+id/reg_mail"
+        android:layout_width="326dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/ic_mail"
+        android:drawablePadding="7dp"
+        android:ems="10"
+        android:hint="Entrez votre adresse Email"
+        android:inputType="textPersonName"
+        android:paddingStart="7dp"
+        android:paddingEnd="7dp"
+        android:textColor="#EAD2D2"
+        android:textColorHint="#E3A7A7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.411"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reg_prenom" />
+
+    <EditText
+        android:id="@+id/reg_nom"
+        android:layout_width="323dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/ic_name"
+        android:drawablePadding="7dp"
+        android:ems="10"
+        android:hint="Entrer votre nom"
+        android:inputType="textPersonName"
+        android:paddingStart="7dp"
+        android:paddingEnd="7dp"
+        android:textColor="#EAD2D2"
+        android:textColorHint="#E3A7A7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.397"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+    <EditText
+        android:id="@+id/reg_prenom"
+        android:layout_width="325dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/ic_name"
+        android:drawablePadding="7dp"
+        android:ems="10"
+        android:hint="Creez un nouvel ID ici"
+        android:inputType="textPersonName"
+        android:paddingStart="7dp"
+        android:paddingEnd="7dp"
+        android:textColor="#EAD2D2"
+        android:textColorHint="#E3A7A7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.406"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reg_nom" />
+
+    <EditText
+        android:id="@+id/reg_password"
+        android:layout_width="330dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/ic_password"
+        android:drawablePadding="7dp"
+        android:ems="10"
+        android:hint="Entrez votre nouveau mot de passe"
+        android:inputType="textPassword"
+        android:paddingStart="7dp"
+        android:paddingEnd="7dp"
+        android:textColor="#EAD2D2"
+        android:textColorHint="#E3A7A7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.432"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reg_mail" />
+
+    <Button
+        android:id="@+id/btnINSCRIPTION"
+        android:layout_width="261dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="40dp"
+        android:background="#D62626"
+        android:text="INSCRIPTION"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.426"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SuccursaleName"
+        app:layout_constraintVertical_bias="0.08" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="267dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="48dp"
+        android:fontFamily="cursive"
+        android:text="Welcome to the Novigrad Family"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#CDADAD"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

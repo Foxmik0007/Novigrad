@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/novigrad"
+    tools:context=".ClientRg">
+
+    <EditText
+        android:id="@+id/etRecueillirNom"
+        android:layout_width="340dp"
+        android:layout_height="71dp"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/ic_name"
+        android:drawablePadding="7dp"
+        android:ems="10"
+        android:hint="Put your Name Here"
+        android:inputType="textPersonName"
+        android:paddingStart="7dp"
+        android:text=""
+        android:textColor="#B4EFD5D5"
+        android:textColorHint="#B4FABFBF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.459"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etRecueillirPrenom"
+        android:layout_width="340dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/ic_name"
+        android:drawablePadding="7dp"
+        android:ems="10"
+        android:hint="Put Your Last Name Here"
+        android:inputType="textPersonName"
+        android:paddingStart="7dp"
+        android:text=""
+        android:textColor="#B4EFD5D5"
+        android:textColorHint="#B4FABFBF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etRecueillirNom" />
+
+    <EditText
+        android:id="@+id/etRecueillirMotDePasse"
+        android:layout_width="343dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/ic_password"
+        android:drawablePadding="7dp"
+        android:ems="10"
+        android:hint="Put Your New PassWord"
+        android:inputType="textPassword"
+        android:paddingStart="7dp"
+        android:textColor="#B4EFD5D5"
+        android:textColorHint="#B4FABFBF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etRecueillirMail" />
+
+    <EditText
+        android:id="@+id/etRecueillirMail"
+        android:layout_width="343dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/ic_mail"
+        android:drawablePadding="7dp"
+        android:ems="10"
+        android:hint="Put Your Email adress"
+        android:inputType="textPersonName"
+        android:paddingStart="7dp"
+        android:text=""
+        android:textColor="#B4EFD5D5"
+        android:textColorHint="#B4FABFBF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etRecueillirPrenom" />
+
+    <Button
+        android:id="@+id/register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_button"
+        android:text="Confirm"
+        android:textColor="#FFBEBE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etRecueillirMotDePasse" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
