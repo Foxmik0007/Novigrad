@@ -21,7 +21,7 @@ import java.util.List;
 
 public class PortailSuccursale extends AppCompatActivity {
 
-    private static EmployeHelperClass currentUser = MainActivity.getCurrentStaff();
+    private static EmployeHelperClass currentUser;
 
     private TextView afficher;
     private Button AjoutService;
@@ -29,6 +29,7 @@ public class PortailSuccursale extends AppCompatActivity {
     private Button supprimer;
     private Button VoirService;
     private Button voirDemande;
+    private Button seDeconnecter;
 
 
     DatabaseReference ServiceDB;
@@ -42,6 +43,7 @@ public class PortailSuccursale extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_portail_succursale);
 
+        currentUser = MainActivity.getCurrentStaff();
 
         //Instantiation base de donnee
         ServiceList = new ArrayList<>();
@@ -57,6 +59,7 @@ public class PortailSuccursale extends AppCompatActivity {
         supprimer = (Button)findViewById(R.id.btnSuprimerServicesSuccursale);
         VoirService = (Button) findViewById(R.id.btnVoirServices);
         voirDemande = (Button) findViewById(R.id.btnVoirDemandes);
+        seDeconnecter = (Button) findViewById(R.id.exitSucc);
         afficher = (TextView) findViewById(R.id.textView13);
 
         afficher.setText(currentUser.getNomSuccursale());
@@ -96,6 +99,16 @@ public class PortailSuccursale extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), VoirDemandes.class);
                 startActivity(intent);
+            }
+        });
+
+        seDeconnecter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                currentUser = null;
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+
             }
         });
 

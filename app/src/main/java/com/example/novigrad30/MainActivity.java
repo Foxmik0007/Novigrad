@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText password ;
     private Button login;
     private TextView sNumber;
-    private  Client onlineCustomer;
+    private static Client onlineCustomer;
     private static EmployeHelperClass onlineStaff;
     EditText userName;
     List<EmployeHelperClass>Crew;
@@ -46,6 +46,9 @@ public class MainActivity extends AppCompatActivity {
         u = loading.products;
         sNumber.setText(Integer.toString(Crew.size()));
 
+        onlineStaff = null;
+        onlineCustomer = null;
+
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                 String id  = userName.getText().toString();
                 String pass = password.getText().toString();
 
-              //  Intent intentA = new Intent(getApplicationContext(),PortailAdministrateur.class);
+                // Intent intentA = new Intent(getApplicationContext(),PortailAdministrateur.class);
                 // startActivity(intentA);
 
                 if ( id.equals("Admin") && pass.equals("ABC"))
@@ -75,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
                 for (short i = 0; i < Customer.size() ; i++){
                     if ( id.equals(Customer.get(i).getNom()) && pass.equals(Customer.get(i).getPassword()) )
                     {
+                        onlineCustomer = Customer.get(i);
                         Intent intent = new Intent(getApplicationContext(),PortailClient.class);
                         startActivity(intent);
                     }
@@ -91,6 +95,8 @@ public class MainActivity extends AppCompatActivity {
     public static EmployeHelperClass getCurrentStaff (){
         return onlineStaff;
     }
+
+    public static Client getCurrentClient(){ return onlineCustomer; }
 
     public boolean Verification (String id, String password){
         for (short i = 0; i < Crew.size();i++){

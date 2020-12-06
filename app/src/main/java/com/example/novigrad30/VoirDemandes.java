@@ -29,7 +29,7 @@ public class VoirDemandes extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_voir_demandes);
-        databaseDemande = FirebaseDatabase.getInstance().getReference("SUCCURSALES/" + currentUser.getNomSuccursale() + "Demandes" );
+        databaseDemande = FirebaseDatabase.getInstance().getReference("SUCCURSALES/"  + currentUser.getNomSuccursale() + "Demandes" );
         //getReference("SUCCURSALES").child("Succursale ottawa").child("Demandes").getRef()
         listDemnades = new ArrayList<>();
 

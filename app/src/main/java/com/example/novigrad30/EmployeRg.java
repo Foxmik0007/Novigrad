@@ -13,9 +13,12 @@ import android.widget.Toast;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class EmployeRg extends AppCompatActivity {
     //Declaration des variables à utilisé
-    EditText regEmail , regName, ID, regPassword, regSuccName;
+    EditText regEmail , regName, ID, regPassword, regSuccName, regSuccAdress;
     Button inscription ;
 
     DatabaseReference StaffReference;
@@ -30,6 +33,8 @@ public class EmployeRg extends AppCompatActivity {
         ID = (EditText) findViewById(R.id.reg_prenom);
         regPassword = (EditText) findViewById(R.id.reg_password);
         regSuccName = (EditText) findViewById(R.id.SuccursaleName);
+        regSuccAdress = (EditText) findViewById(R.id.SuccursaleAdress);
+
 
         inscription = (Button) findViewById(R.id.btnINSCRIPTION);
 
@@ -44,11 +49,13 @@ public class EmployeRg extends AppCompatActivity {
                 String email = regEmail.getText().toString().trim();
                 String password = regPassword.getText().toString().trim();
                 String SuccursaleName = regSuccName.getText().toString().trim();
+                String SuccursaleAdress = regSuccAdress.getText().toString().trim();
+
                 //RECUPERATION D'UNE CLÉE
                 String id = StaffReference.push().getKey();
 
                 //CREATION D'UNE ENTITÉ STAFF
-                EmployeHelperClass employeHelperClass =new EmployeHelperClass(iD,name,email,password, SuccursaleName);
+                EmployeHelperClass employeHelperClass =new EmployeHelperClass(iD,name,email,password,SuccursaleName,SuccursaleAdress);
                 StaffReference.child(name).setValue(employeHelperClass);
                 Toast.makeText(EmployeRg.this, "Utilisateur ajoutée", Toast.LENGTH_SHORT).show();
             }

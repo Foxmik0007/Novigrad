@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -22,10 +23,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ModifyService extends AppCompatActivity {
-    private EditText servicename;
-    private  Button list;
-    private EditText doc;
-    private  EditText form;
 
     static DatabaseReference databaseServcice;
     static List<ServicesHelperClass> ListeDeService;
@@ -33,36 +30,28 @@ public class ModifyService extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate( savedInstanceState );
         setContentView( R.layout.activity_modify_service );
-        list=(Button)findViewById( R.id.Listbtn );
 
         ListeDeService = new ArrayList<>();
         databaseServcice = FirebaseDatabase.getInstance().getReference("SERVICES");
 
-        list.setOnClickListener( new View.OnClickListener() {
+        Handler handler = new Handler();
+
+        //CONFIGURATION DELAIS D'ATTENTE
+        handler.postDelayed(new Runnable() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ModifyService.this,changerService.class );
+            public void run() {
+                Intent intent = new Intent(ModifyService.this, changerService.class);
                 startActivity(intent);
+                finish();
             }
-        } );
-    }
-    private void addService()
-    {
-        String name = servicename.getText().toString().trim();
-        String docad = doc.getText().toString().trim();
-        String formad = form.getText().toString().trim();
-        if (!TextUtils.isEmpty( name ))
-        {
-            String id= databaseServcice.push().getKey();
-            Service service=new Service(id,name,docad,formad);
-            databaseServcice.child( id).setValue( service );
-            Toast.makeText( this,"Service added",Toast.LENGTH_SHORT ).show();
-        }
-        else    {
-            Toast.makeText( ModifyService.this, "Champ Invalide", Toast.LENGTH_LONG ).show();
-        }
+
+        }, 1250);
     }
 
+
+
+
+    //Chargement de la base de donnée
     @Override
     protected void onStart() {
         super.onStart();
@@ -80,30 +69,6 @@ public class ModifyService extends AppCompatActivity {
                     }
                     if (!verify)
                         ListeDeService.add( service );
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        } );
-    }
-
-    public static void update (final List<ServicesHelperClass> proto){
-        databaseServcice.addValueEventListener( new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (DataSnapshot serviceSnap : snapshot.getChildren()){
-                    ServicesHelperClass service = serviceSnap.getValue(ServicesHelperClass.class);
-                    Boolean verify = false;
-
-                    for (short i = 0; i <= proto.size(); i++){
-                        if (service.getNom() == proto.get(i).getNom())
-                            verify = true;
-                    }
-                    if (!verify)
-                        proto.add( service );
                 }
             }
 

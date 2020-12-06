@@ -64,6 +64,12 @@
             android:layout_marginBottom="15dp"
             android:text="Supprimer des services"
             app:backgroundTint="#F44336" />
+
+        <Button
+            android:id="@+id/exitSucc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Se deconnecter" />
     </LinearLayout>
 
     <TextView

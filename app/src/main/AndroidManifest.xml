@@ -9,7 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".VoirDemandes"></activity>
+        <activity android:name=".DialogServiceLooking"></activity>
+        <activity android:name=".lookingType" />
+        <activity android:name=".LoadingLookingSuccursale" />
+        <activity android:name=".Succursale_List" />
+        <activity android:name=".GererSuccursale" />
+        <activity android:name=".loadingGestionSuccursale" />
+        <activity android:name=".Client_List" />
+        <activity android:name=".GererClient" />
+        <activity android:name=".loadingGestionClient" />
+        <activity android:name=".VoirDemandes" />
         <activity android:name=".VoirServices" />
         <activity android:name=".SupprimerServiceSuccursale" />
         <activity android:name=".HeureDialog" />

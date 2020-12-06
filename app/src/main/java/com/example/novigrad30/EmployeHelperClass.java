@@ -1,14 +1,16 @@
 package com.example.novigrad30;
 
 public class EmployeHelperClass {
-    private String name , ID,  email , password, nomSuccursale;
+    private String name , ID,  email , password, nomSuccursale, adressSuccursale;
 
-    public EmployeHelperClass(String ID, String name , String email , String password, String nomSuccursale) {
+
+    public EmployeHelperClass(String ID, String name , String email , String password, String nomSuccursale, String adressSuccursale) {
         this.ID = ID;
         this.email = email;
         this.name = name;
         this.password = password;
         this.nomSuccursale = nomSuccursale;
+        this.adressSuccursale = adressSuccursale;
     }
 
     public EmployeHelperClass() {
@@ -52,5 +54,13 @@ public class EmployeHelperClass {
 
     public void setID(String ID) {
         this.ID = ID;
+    }
+
+    public String getAdressSuccursale() {
+        return adressSuccursale;
+    }
+
+    public void setAdressSuccursale(String adressSuccursale) {
+        this.adressSuccursale = adressSuccursale;
     }
 }

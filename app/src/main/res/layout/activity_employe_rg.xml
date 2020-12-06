@@ -17,7 +17,7 @@
         android:drawableStart="@drawable/ic_baseline_location"
         android:drawablePadding="7dp"
         android:ems="10"
-        android:hint="Entrez le nom de votre Succursale"
+        android:hint="Entrez le nom  de votre Succursale"
         android:inputType="textPersonName"
         android:paddingStart="7dp"
         android:paddingEnd="7dp"
@@ -27,6 +27,26 @@
         app:layout_constraintHorizontal_bias="0.443"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/reg_password" />
+
+    <EditText
+        android:id="@+id/SuccursaleAdress"
+        android:layout_width="332dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/ic_baseline_location"
+        android:drawablePadding="7dp"
+        android:ems="10"
+        android:hint="Entrez l'adresse  de votre Succursale"
+        android:inputType="textPersonName"
+        android:paddingStart="7dp"
+        android:paddingEnd="7dp"
+        android:textColor="#EAD2D2"
+        android:textColorHint="#E3A7A7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.417"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SuccursaleName" />
 
     <EditText
         android:id="@+id/reg_mail"
@@ -112,21 +132,20 @@
         android:id="@+id/btnINSCRIPTION"
         android:layout_width="261dp"
         android:layout_height="57dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="60dp"
         android:background="#D62626"
         android:text="INSCRIPTION"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.426"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SuccursaleName"
-        app:layout_constraintVertical_bias="0.08" />
+        app:layout_constraintTop_toBottomOf="@+id/SuccursaleAdress"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView13"
         android:layout_width="267dp"
         android:layout_height="50dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="4dp"
         android:fontFamily="cursive"
         android:text="Welcome to the Novigrad Family"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
