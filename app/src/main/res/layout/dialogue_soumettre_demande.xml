@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="332dp"
+        android:layout_height="610dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="50dp"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/textView101"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Voulez vous soumettre une demande
+            a ce service ?" />
+
+        <Button
+            android:id="@+id/buttonConfirmer2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Confirmer" />
+
+        <Button
+            android:id="@+id/buttonAnnuler2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Annuler" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
