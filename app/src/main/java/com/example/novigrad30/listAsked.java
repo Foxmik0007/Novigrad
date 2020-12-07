@@ -1,15 +1,14 @@
 package com.example.novigrad30;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -59,6 +58,7 @@ protected void onCreate(Bundle savedInstanceState) {
                  }
 
         Toast.makeText(listAsked.this, succursaleSelected.getName() + " selected", Toast.LENGTH_SHORT).show();
+
         openChoiceDialog();
         return true;
         }
@@ -90,10 +90,11 @@ public void openChoiceDialog(){
 
 public void applyTextChoice(Boolean as){
     if (as){
-      Intent intent = new Intent(getApplicationContext(), SelectionServicesClients.class);
-      startActivity(intent);
+      Intent intent2 = new Intent(listAsked.this, SelectionServicesClients.class);
+      startActivity(intent2);
     } else
         openRatingDialog();
+
 }
 
 

@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -51,9 +50,11 @@ public class SelectionServicesClients extends AppCompatActivity implements Servi
         a = new ArrayList<>();
 
 
-        //liste des service de la succursale actuellement utilisee
+        //liste des services de la succursale actuellement utilisee
         a = listAsked.getCurrentService();
         //u.add(a);
+       /* ServicesHelperClass service = new ServicesHelperClass("hhh","king","luffy","grandeline");
+        a.add(service);*/
 
         ServicesList adapter = new ServicesList( SelectionServicesClients.this, a);
         listViewService.setAdapter( adapter );
