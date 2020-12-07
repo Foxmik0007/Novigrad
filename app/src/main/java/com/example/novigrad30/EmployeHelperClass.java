@@ -13,7 +13,7 @@ public class EmployeHelperClass {
         this.adressSuccursale = adressSuccursale;
     }
 
-    public EmployeHelperClass() {
+    public EmployeHelperClass(String mika, String s, String s1, String s2, String moncton) {
     }
 
     public String getPassword() {

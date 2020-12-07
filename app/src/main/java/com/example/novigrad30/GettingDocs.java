@@ -105,14 +105,14 @@ public class GettingDocs extends AppCompatActivity implements View.OnClickListen
                 if(SelectionServicesClients.getChoice_form().equals("pc"))
                 {
                     //recuperer la demande du formulaire pc
-                    Client client = MainActivity.getOnlineClient();
+                    Client client = MainActivity.getCurrentClient();
                     demande = Pc_form.get_demande();
                     demande.setFormulaires_requis(Pc_form.getData());
                     demande.setFormulaires_fournis(client.getNom()+ " "+client.getPrenom() + "file.jpg");
                 }
                 else
                 {
-                    Client client = MainActivity.getOnlineClient();
+                    Client client = MainActivity.getCurrentClient();
                     demande = Form.get_demande();
                     demande.setFormulaires_fournis(client.getNom()+ " "+client.getPrenom() + "file.jpg");
                     demande.setFormulaires_requis(Form.getData());
@@ -121,7 +121,7 @@ public class GettingDocs extends AppCompatActivity implements View.OnClickListen
                 DatabaseReference SuccursaleDB;
 
                 SuccursaleDB = FirebaseDatabase.getInstance().getReference("SUCCURSALES/Succursale Toronto" + /*currentUser.getNomSuccursale() +*/ "/Demandes");
-                SuccursaleDB.child(MainActivity.getOnlineClient().getNom() + " " + MainActivity.getOnlineClient().getPrenom()+"/"+SelectionServicesClients.getChosen_one().getServiceName()).setValue(demande);
+                SuccursaleDB.child(MainActivity.getCurrentClient().getNom() + " " + MainActivity.getCurrentClient().getPrenom()+"/"+SelectionServicesClients.getChosen_one().getServiceName()).setValue(demande);
                 //indiquez à l'utilisateur
                 Toast.makeText(GettingDocs.this, "Demande soumise! ", Toast.LENGTH_SHORT).show();
             }
@@ -137,7 +137,7 @@ public void uploadFile() {
             progressDialog.show();
 
 
-            Client client = MainActivity.getOnlineClient();
+            Client client = MainActivity.getCurrentClient();
             StorageReference riversRef = storageReference.child("images/"+client.getNom()+ " "+client.getPrenom() + "file.jpg");
             //StorageReference riversRef = storageReference.child("images/pic.jpg");
             riversRef.putFile(filePath)

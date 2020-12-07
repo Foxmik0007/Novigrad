@@ -24,7 +24,7 @@ import java.util.List;
 public class SelectionServicesClients extends AppCompatActivity implements ServiceDialogue.dialogListener {
 
 
-    private static EmployeHelperClass currentUser = /* MainActivity.get_a_staff_for_test();*/ PortailClient.staff_succursale_actuelle;
+    private static EmployeHelperClass currentUser = /* MainActivity.get_a_staff_for_test();*/ PortailClient.;
     public static Service chosen_one;
     public static String choice_service;
     List<ServicesHelperClass> a;
