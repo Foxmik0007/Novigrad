@@ -3,6 +3,8 @@ package com.example.novigrad30;
 public class EmployeHelperClass {
     private String name , ID,  email , password, nomSuccursale, adressSuccursale;
 
+    public EmployeHelperClass() {
+    }
 
     public EmployeHelperClass(String ID, String name , String email , String password, String nomSuccursale, String adressSuccursale) {
         this.ID = ID;
