@@ -55,8 +55,11 @@ protected void onCreate(Bundle savedInstanceState) {
         for (short i = 0; i < succursaleList.size(); i++){
                 if (succursaleList.get(i).getNomSuccursale().equals(nomSuccursale.get(position)))
                  succursaleSelected = succursaleList.get(i);
+
+
                  }
 
+    succursaleServiceDB = FirebaseDatabase.getInstance().getReference("SUCCURSALES/" + succursaleSelected.getNomSuccursale() + "/Services Offerts");
         Toast.makeText(listAsked.this, succursaleSelected.getName() + " selected", Toast.LENGTH_SHORT).show();
 
         openChoiceDialog();

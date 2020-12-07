@@ -31,6 +31,9 @@
         <activity android:name=".ServiceDialogue" />
         <activity android:name=".HeureDeTravail" />
         <activity android:name=".AddServiceSuccursale" />
+        <activity android:name=".Form" />
+        <activity android:name=".Pc_form" />
+        <activity android:name=".GettingDocs" />
         <activity android:name=".SelectionServicesClients" />
         <activity android:name=".PortailSuccursale" />
         <activity android:name=".loading">
