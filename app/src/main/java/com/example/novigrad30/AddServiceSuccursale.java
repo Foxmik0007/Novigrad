@@ -30,12 +30,12 @@ public class AddServiceSuccursale extends AppCompatActivity implements ServiceDi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        SuccursaleDB = FirebaseDatabase.getInstance().getReference("SUCCURSALES/" + currentUser.getNomSuccursale() + "/Services Offerts");
+        SuccursaleDB = FirebaseDatabase.getInstance().getReference("SUCCURSALES/"+ currentUser.getNomSuccursale() + "/Services Offerts");
 
         //Affichage en ListView
         // Ici tu vas lier ça au layout de la liste que tu vas utiliser
         setContentView( R.layout.activity_see_serive );
-        listViewService=(ListView)findViewById(R.id.ListViewService  );
+        listViewService=(ListView)findViewById(R.id.ListViewService);
 
         //Copie des donnees recu dans l'Activité precedente
         u = new ArrayList<>();

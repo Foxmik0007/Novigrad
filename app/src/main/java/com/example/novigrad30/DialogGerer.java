@@ -1,20 +1,15 @@
 package com.example.novigrad30;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDialogFragment;
-
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.EditText;
 
-public class ServiceDialogue extends AppCompatDialogFragment {
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatDialogFragment;
+
+public class DialogGerer extends AppCompatDialogFragment {
 
     private dialogListener listener;
 
@@ -26,8 +21,8 @@ public class ServiceDialogue extends AppCompatDialogFragment {
         //View view = inflater.inflate(R.layout.activity_service_dialogue, null);
 
         builder/*.setView(view)*/
-                .setTitle("CONFIRMATION")
-                .setMessage("Ajouter ce service à la succursale ?" )
+                .setTitle("Suppression")
+                .setMessage("Voulez vous supprimer ?" )
                 .setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -49,7 +44,7 @@ public class ServiceDialogue extends AppCompatDialogFragment {
         super.onAttach(context);
 
         try {
-            listener = (dialogListener)context;
+            listener = (dialogListener) context;
         } catch (ClassCastException e) {
             throw new ClassCastException(context.toString() + "dialogListener n'a pas été implementé");
         }

@@ -1,8 +1,6 @@
 package com.example.novigrad30;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDialogFragment;
 
 import android.app.AlertDialog;
@@ -14,7 +12,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 
-public class ServiceDialogue extends AppCompatDialogFragment {
+import java.util.ArrayList;
+import java.util.List;
+
+public class DialogServiceLooking extends AppCompatDialogFragment {
+
+    private List<String> listeDesAdresse = new ArrayList<>();
+    private List<EmployeHelperClass> listeDesEmployee = new ArrayList<>();
+    private EditText service;
 
     private dialogListener listener;
 
@@ -22,16 +27,22 @@ public class ServiceDialogue extends AppCompatDialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
-        //LayoutInflater inflater = getActivity().getLayoutInflater();
-        //View view = inflater.inflate(R.layout.activity_service_dialogue, null);
 
-        builder/*.setView(view)*/
-                .setTitle("CONFIRMATION")
-                .setMessage("Ajouter ce service à la succursale ?" )
-                .setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+
+        listeDesEmployee = LoadingLookingSuccursale.getListeDesEmployee();
+        charger(listeDesEmployee, listeDesAdresse);
+
+        LayoutInflater inflater = getActivity().getLayoutInflater();
+        View view = inflater.inflate(R.layout.dialog_service_looking, null);
+
+
+        builder .setView(view)
+                .setTitle("Recherche par service demandé")
+                .setPositiveButton("Search", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        listener.applyText(true);
+                        String values = service.getText().toString();
+                        listener.applyTextService(values);
                     }
                 })
                 .setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -41,6 +52,9 @@ public class ServiceDialogue extends AppCompatDialogFragment {
                     }
                 });
 
+
+        service = (EditText) view.findViewById(R.id.serviceSearching);
+
         return builder.create();
 
     }
@@ -49,13 +63,21 @@ public class ServiceDialogue extends AppCompatDialogFragment {
         super.onAttach(context);
 
         try {
-            listener = (dialogListener)context;
+            listener = (dialogListener) context;
         } catch (ClassCastException e) {
             throw new ClassCastException(context.toString() + "dialogListener n'a pas été implementé");
         }
     }
 
     public interface dialogListener {
-        void applyText(Boolean as);
+        void applyTextService(String adress);
     }
+
+
+    public void charger (List<EmployeHelperClass> ListeEmployee, List<String> Liste){
+        for (short i = 0; i <ListeEmployee.size(); i++) {
+            Liste.add(ListeEmployee.get(i).getName());
+        }
+    }
+
 }

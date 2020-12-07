@@ -47,6 +47,21 @@ public class PortailAdministrateur extends AppCompatActivity {
             }
         });
 
+        gererClient.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), loadingGestionClient.class);
+                startActivity(intent);
+            }
+        });
+
+        gererSuccursales.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), loadingGestionSuccursale.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }

@@ -63,4 +63,8 @@ public class EmployeHelperClass {
     public void setAdressSuccursale(String adressSuccursale) {
         this.adressSuccursale = adressSuccursale;
     }
+
+    public void setNomSuccursale(String nomSuccursale) {
+        this.nomSuccursale = nomSuccursale;
+    }
 }

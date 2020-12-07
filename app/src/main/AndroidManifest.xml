@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DialogServiceLooking"></activity>
+        <activity android:name=".dialogChoice"></activity>
+        <activity android:name=".dialogRating" />
+        <activity android:name=".listAsked" />
+        <activity android:name=".rating" />
+        <activity android:name=".DialogServiceLooking" />
         <activity android:name=".lookingType" />
         <activity android:name=".LoadingLookingSuccursale" />
         <activity android:name=".Succursale_List" />

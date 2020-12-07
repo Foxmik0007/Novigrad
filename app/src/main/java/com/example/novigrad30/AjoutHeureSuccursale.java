@@ -27,7 +27,7 @@ public class AjoutHeureSuccursale extends AppCompatActivity implements HeureDial
         setContentView(R.layout.activity_ajout_heure_succursale);
 
         listView=(ListView)findViewById( R.id.listView);
-        databaseReference= FirebaseDatabase.getInstance().getReference("SUCCURSALES/" + currentUser.getNomSuccursale() );
+        databaseReference= FirebaseDatabase.getInstance().getReference("SUCCURSALES/"+ currentUser.getNomSuccursale() );
         ArrayList<String> arrayList=new ArrayList<>();
         arrayList.add("Lundi");
         arrayList.add("Mardi");

@@ -24,7 +24,7 @@ import java.util.List;
 public class SelectionServicesClients extends AppCompatActivity implements ServiceDialogue.dialogListener {
 
 
-    private static EmployeHelperClass currentUser = /* MainActivity.get_a_staff_for_test();*/ PortailClient.;
+    private static EmployeHelperClass currentUser = /* MainActivity.get_a_staff_for_test();*/ listAsked.getSuccursaleSelected();
     public static Service chosen_one;
     public static String choice_service;
     List<ServicesHelperClass> a;
@@ -50,8 +50,9 @@ public class SelectionServicesClients extends AppCompatActivity implements Servi
         //Copie des donnees recu dans l'Activité precedente
         a = new ArrayList<>();
 
-        //liste des service de la succursale
-        a = PortailClient.SuccursalServiceList_selection;
+
+        //liste des service de la succursale actuellement utilisee
+        a = listAsked.getCurrentService();
         //u.add(a);
 
         ServicesList adapter = new ServicesList( SelectionServicesClients.this, a);
@@ -74,8 +75,6 @@ public class SelectionServicesClients extends AppCompatActivity implements Servi
         ServiceDialogue updateDialogue = new ServiceDialogue();
         updateDialogue.show(getSupportFragmentManager(), "Confirmation");
     }
-
-
 
     private void showConfirmationDialog(final String Serviceid , final String ServiceName , final String ServiceDoc, final String ServiceFormulaire)
     {
@@ -116,13 +115,9 @@ public class SelectionServicesClients extends AppCompatActivity implements Servi
         annuler.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
                 alertDialog.dismiss();
             }
         });
-
-
 
 
     }

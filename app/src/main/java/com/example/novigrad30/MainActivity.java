@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView sNumber;
     private static Client onlineCustomer;
     private static EmployeHelperClass onlineStaff;
+
     EditText userName;
     List<EmployeHelperClass>Crew;
     List<Client>Customer;

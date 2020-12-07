@@ -44,9 +44,10 @@ public class loading extends AppCompatActivity {
         Staff = FirebaseDatabase.getInstance().getReference("STAFF");
         Clients = FirebaseDatabase.getInstance().getReference("CLIENTS");
         Services = FirebaseDatabase.getInstance().getReference("SERVICES");
+
         //Handler handler = new Handler();
 
-       EmployeHelperClass admin = new EmployeHelperClass("Staff1", "Staff", "0@mail.ca", "ABC", "QG");
+       EmployeHelperClass admin = new EmployeHelperClass("Staff1", "Staff", "0@mail.ca","ABC", "QG", "Global");
         crew.add(admin);
 
         Client client = new Client("0","Client0", "Client0", "ABC", "0@mail.ca");

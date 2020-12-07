@@ -1,7 +1,6 @@
 package com.example.novigrad30;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDialogFragment;
 
@@ -12,26 +11,27 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.EditText;
+import android.widget.RatingBar;
 
-public class ServiceDialogue extends AppCompatDialogFragment {
+public class dialogRating extends AppCompatDialogFragment {
 
     private dialogListener listener;
+    RatingBar rating;
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
-        //LayoutInflater inflater = getActivity().getLayoutInflater();
-        //View view = inflater.inflate(R.layout.activity_service_dialogue, null);
+        LayoutInflater inflater = getActivity().getLayoutInflater();
+        View view = inflater.inflate(R.layout.activity_dialog_rating, null);
 
-        builder/*.setView(view)*/
-                .setTitle("CONFIRMATION")
-                .setMessage("Ajouter ce service à la succursale ?" )
+        builder .setView(view)
+                .setTitle("Note")
                 .setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        listener.applyText(true);
+                        String r = String.valueOf( rating.getRating() );
+                        listener.applyTextRating(r);
                     }
                 })
                 .setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -41,6 +41,7 @@ public class ServiceDialogue extends AppCompatDialogFragment {
                     }
                 });
 
+        rating = (RatingBar)view.findViewById(R.id.rating_bar);
         return builder.create();
 
     }
@@ -49,13 +50,13 @@ public class ServiceDialogue extends AppCompatDialogFragment {
         super.onAttach(context);
 
         try {
-            listener = (dialogListener)context;
+            listener = (dialogListener) context;
         } catch (ClassCastException e) {
             throw new ClassCastException(context.toString() + "dialogListener n'a pas été implementé");
         }
     }
 
     public interface dialogListener {
-        void applyText(Boolean as);
+        void applyTextRating(String as);
     }
 }
