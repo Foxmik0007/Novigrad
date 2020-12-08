@@ -111,11 +111,6 @@ public void recuperation( List<EmployeHelperClass> Employee, List<String> nomSuc
         }
         }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-        succursaleSelected = null;
-    }
 
     public static EmployeHelperClass getSuccursaleSelected() {
         return succursaleSelected;

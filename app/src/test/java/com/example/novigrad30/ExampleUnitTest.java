@@ -37,13 +37,14 @@ public class ExampleUnitTest {
     @Test
     public void testEmployeHelperclass()
     {
-        EmployeHelperClass employeHelperClass = new EmployeHelperClass("mika","mika","mikazo@.com","123456789","moncton");
+        EmployeHelperClass employeHelperClass = new EmployeHelperClass("mika","mika","mikazo@.com","123456789","moncton","123 rue daniel");
 
-      //  assertEquals("mika",employeHelperClass.getID());
-       // assertEquals("mika",employeHelperClass.getName());
-      //  assertEquals("mikazo@.com",employeHelperClass.getEmail());
-       // assertEquals("123456789",employeHelperClass.getPassword());
-        //assertEquals("moncton",employeHelperClass.getNomSuccursale());
+        assertEquals("mika",employeHelperClass.getID());
+        assertEquals("mika",employeHelperClass.getName());
+        assertEquals("mikazo@.com",employeHelperClass.getEmail());
+        assertEquals("123456789",employeHelperClass.getPassword());
+        assertEquals("moncton",employeHelperClass.getNomSuccursale());
+        //assertEquals("123 rue daniel ",employeHelperClass.getAdressSuccursale());
 
 
     }

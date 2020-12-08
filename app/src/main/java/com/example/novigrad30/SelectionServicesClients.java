@@ -39,12 +39,12 @@ public class SelectionServicesClients extends AppCompatActivity implements Servi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        SuccursaleDB = FirebaseDatabase.getInstance().getReference("SUCCURSALES/" + currentUser.getNomSuccursale() +"/Services Offerts");
+        SuccursaleDB = FirebaseDatabase.getInstance().getReference("SUCCURSALES/" + listAsked.succursaleSelected.getNomSuccursale() + "/Services Offerts");
 
         //Affichage en ListView
         // Ici tu vas lier ça au layout de la liste que tu vas utiliser
         setContentView( R.layout.activity_see_serive );
-        listViewService=(ListView)findViewById(R.id.ListViewService  );
+        listViewService=(ListView)findViewById(R.id.ListViewService);
 
         //Copie des donnees recu dans l'Activité precedente
         a = new ArrayList<>();
@@ -64,7 +64,7 @@ public class SelectionServicesClients extends AppCompatActivity implements Servi
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 ServiceSelect = a.get(position);
-                showConfirmationDialog(ServiceSelect.getServiceId(),ServiceSelect.getNom(),ServiceSelect.getDocuments(),ServiceSelect.getFormulaireRequis());
+                //showConfirmationDialog(ServiceSelect.getServiceId(),ServiceSelect.getNom(),ServiceSelect.getDocuments(),ServiceSelect.getFormulaireRequis());
                 return true;
             }
         } );
@@ -72,7 +72,7 @@ public class SelectionServicesClients extends AppCompatActivity implements Servi
     }
 
     //Ouverture de la boite de dialogue
-    public void openDialog(){
+   public void openDialog(){
         ServiceDialogue updateDialogue = new ServiceDialogue();
         updateDialogue.show(getSupportFragmentManager(), "Confirmation");
     }

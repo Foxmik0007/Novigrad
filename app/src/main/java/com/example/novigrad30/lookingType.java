@@ -59,6 +59,7 @@ public class lookingType extends AppCompatActivity implements DialogAdressLookin
             }
         });
 
+
         service.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
