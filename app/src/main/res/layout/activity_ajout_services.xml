@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/novigrad"
-    tools:context=".AjoutServices">
+    tools:context=".administrator.functions.AjoutServices">
 
     <EditText
         android:id="@+id/etNomService"

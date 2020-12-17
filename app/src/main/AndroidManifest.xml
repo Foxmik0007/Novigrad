@@ -9,34 +9,34 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".dialogChoice"></activity>
-        <activity android:name=".dialogRating" />
-        <activity android:name=".listAsked" />
-        <activity android:name=".rating" />
-        <activity android:name=".DialogServiceLooking" />
-        <activity android:name=".lookingType" />
-        <activity android:name=".LoadingLookingSuccursale" />
-        <activity android:name=".Succursale_List" />
-        <activity android:name=".GererSuccursale" />
-        <activity android:name=".loadingGestionSuccursale" />
-        <activity android:name=".Client_List" />
-        <activity android:name=".GererClient" />
-        <activity android:name=".loadingGestionClient" />
-        <activity android:name=".VoirDemandes" />
-        <activity android:name=".VoirServices" />
-        <activity android:name=".SupprimerServiceSuccursale" />
-        <activity android:name=".HeureDialog" />
-        <activity android:name=".AjoutHeureSuccursale" />
-        <activity android:name=".PortailClient" />
-        <activity android:name=".ServiceDialogue" />
+        <activity android:name=".client.dialogbox.dialogChoice"></activity>
+        <activity android:name=".client.dialogbox.dialogRating" />
+        <activity android:name=".client.functions.listAsked" />
+        <activity android:name=".client.rating" />
+        <activity android:name=".client.dialogbox.DialogServiceLooking" />
+        <activity android:name=".client.functions.lookingType" />
+        <activity android:name=".client.loading.LoadingLookingSuccursale" />
+        <activity android:name=".Class.Succursale.Succursale_List" />
+        <activity android:name=".administrator.functions.GererSuccursale" />
+        <activity android:name=".administrator.loading.loadingGestionSuccursale" />
+        <activity android:name=".client.List.Client_List" />
+        <activity android:name=".administrator.functions.GererClient" />
+        <activity android:name=".administrator.loading.loadingGestionClient" />
+        <activity android:name=".staff.functions.VoirDemandes" />
+        <activity android:name=".staff.functions.VoirServices" />
+        <activity android:name=".staff.functions.SupprimerServiceSuccursale" />
+        <activity android:name=".staff.dialogbox.HeureDialog" />
+        <activity android:name=".staff.functions.AjoutHeureSuccursale" />
+        <activity android:name=".client.PortailClient" />
+        <activity android:name=".client.dialogbox.ServiceDialogue" />
         <activity android:name=".HeureDeTravail" />
-        <activity android:name=".AddServiceSuccursale" />
-        <activity android:name=".Form" />
-        <activity android:name=".Pc_form" />
-        <activity android:name=".GettingDocs" />
-        <activity android:name=".SelectionServicesClients" />
-        <activity android:name=".PortailSuccursale" />
-        <activity android:name=".loading">
+        <activity android:name=".staff.functions.AddServiceSuccursale" />
+        <activity android:name=".client.functions.Form" />
+        <activity android:name=".client.functions.Pc_form" />
+        <activity android:name=".client.functions.GettingDocs" />
+        <activity android:name=".client.functions.SelectionServicesClients" />
+        <activity android:name=".staff.PortailSuccursale" />
+        <activity android:name=".loading.loading">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -44,17 +44,17 @@
             </intent-filter>
         </activity>
         <activity android:name=".updateDialogue" />
-        <activity android:name=".changerService" />
-        <activity android:name=".ModifyService" />
+        <activity android:name=".administrator.functions.changerService" />
+        <activity android:name=".administrator.loading.ModifyService" />
         <activity android:name=".SeeSeriveActivity" />
-        <activity android:name=".EmployeRg" />
-        <activity android:name=".ClientRg" />
+        <activity android:name=".Class.Staff.EmployeRg" />
+        <activity android:name=".Class.Client.ClientRg" />
         <activity android:name=".SignUPRedirection" />
         <activity android:name=".ListesDesServices" />
-        <activity android:name=".SuppressionDeServices" />
+        <activity android:name=".administrator.functions.SuppressionDeServices" />
         <activity android:name=".ModifierLesServices" />
-        <activity android:name=".AjoutServices" />
-        <activity android:name=".PortailAdministrateur" />
+        <activity android:name=".administrator.functions.AjoutServices" />
+        <activity android:name=".administrator.PortailAdministrateur" />
         <activity android:name=".MainActivity" />
     </application>
 

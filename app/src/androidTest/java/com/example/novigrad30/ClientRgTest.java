@@ -2,6 +2,8 @@ package com.example.novigrad30;
 
 import androidx.test.rule.ActivityTestRule;
 
+import com.example.novigrad30.Class.Client.ClientRg;
+
 import org.junit.Rule;
 import org.junit.Test;
 
@@ -9,7 +11,6 @@ import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
-import static org.junit.Assert.*;
 
 public class ClientRgTest {
 

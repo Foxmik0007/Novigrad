@@ -8,6 +8,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.novigrad30.Class.Client.ClientRg;
+import com.example.novigrad30.Class.Staff.EmployeRg;
+
 public class SignUPRedirection extends AppCompatActivity {
     Button client, employe;
     @Override
@@ -20,7 +23,7 @@ public class SignUPRedirection extends AppCompatActivity {
         client.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),ClientRg.class);
+                Intent intent = new Intent(getApplicationContext(), ClientRg.class);
                 startActivity(intent);
             }
         });
@@ -28,7 +31,7 @@ public class SignUPRedirection extends AppCompatActivity {
         employe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 Intent intent = new Intent(getApplicationContext(),EmployeRg.class);
+                 Intent intent = new Intent(getApplicationContext(), EmployeRg.class);
                  startActivity(intent);
             }
         });

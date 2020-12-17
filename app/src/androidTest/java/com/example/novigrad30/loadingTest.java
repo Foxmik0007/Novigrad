@@ -5,6 +5,8 @@ import android.app.Instrumentation;
 
 import androidx.test.rule.ActivityTestRule;
 
+import com.example.novigrad30.loading.loading;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;

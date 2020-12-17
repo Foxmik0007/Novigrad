@@ -1,6 +1,5 @@
 package com.example.novigrad30;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -9,6 +8,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.example.novigrad30.Class.Client.Client;
+import com.example.novigrad30.Class.Service.ServicesHelperClass;
+import com.example.novigrad30.Class.Staff.EmployeHelperClass;
+import com.example.novigrad30.administrator.PortailAdministrateur;
+import com.example.novigrad30.client.PortailClient;
+import com.example.novigrad30.loading.*;
+import com.example.novigrad30.staff.PortailSuccursale;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if ( id.equals("Admin") && pass.equals("ABC"))
                 {
-                    Intent intent = new Intent(getApplicationContext(),PortailAdministrateur.class);
+                    Intent intent = new Intent(getApplicationContext(), PortailAdministrateur.class);
                     startActivity(intent);
                 }
 
@@ -71,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
                   if ( id.equals(Crew.get(i).getID()) && pass.equals(Crew.get(i).getPassword()) )
                   {
                       onlineStaff = Crew.get(i);
-                      Intent intent = new Intent(getApplicationContext(),PortailSuccursale.class);
+                      Intent intent = new Intent(getApplicationContext(), PortailSuccursale.class);
                       startActivity(intent);
                   }
               }
@@ -80,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
                     if ( id.equals(Customer.get(i).getNom()) && pass.equals(Customer.get(i).getPassword()) )
                     {
                         onlineCustomer = Customer.get(i);
-                        Intent intent = new Intent(getApplicationContext(),PortailClient.class);
+                        Intent intent = new Intent(getApplicationContext(), PortailClient.class);
                         startActivity(intent);
                     }
                 }

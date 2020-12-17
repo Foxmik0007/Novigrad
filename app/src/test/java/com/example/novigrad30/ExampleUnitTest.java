@@ -1,5 +1,11 @@
 package com.example.novigrad30;
 
+import com.example.novigrad30.Class.Client.Client;
+import com.example.novigrad30.Class.Hours.Heure;
+import com.example.novigrad30.Class.Service.Service;
+import com.example.novigrad30.Class.Service.ServicesHelperClass;
+import com.example.novigrad30.Class.Staff.EmployeHelperClass;
+
 import org.junit.Test;
 
 import static org.junit.Assert.*;
