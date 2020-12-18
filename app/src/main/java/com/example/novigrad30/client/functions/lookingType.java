@@ -38,9 +38,9 @@ public class lookingType extends AppCompatActivity implements DialogAdressLookin
     short count = 0;
     private String adressLook;
 
-    private List<EmployeHelperClass>listeDesEmployee = new ArrayList<>();
-    private List<ServicesHelperClass>listeDesServices = new ArrayList<>();
-    private static List<EmployeHelperClass> employeeSelected = new ArrayList<>();
+    private List<EmployeHelperClass>listeDesEmployee;
+    private List<ServicesHelperClass>listeDesServices;
+    private static List<EmployeHelperClass> employeeSelected;
 
     DatabaseReference DBservices;
 
@@ -48,6 +48,10 @@ public class lookingType extends AppCompatActivity implements DialogAdressLookin
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_looking_type);
+
+        listeDesEmployee = new ArrayList<>();
+        listeDesServices = new ArrayList<>();
+        employeeSelected = new ArrayList<>();
 
         listeDesEmployee = LoadingLookingSuccursale.getListeDesEmployee();
         listeDesServices = LoadingLookingSuccursale.getListeDeService();
@@ -92,10 +96,16 @@ public class lookingType extends AppCompatActivity implements DialogAdressLookin
     public void applyTextAdress(String adress){
         short count = 0;
 
+        //verification de la liste
         for (short i = 0; i < listeDesEmployee.size(); i ++){
             if (listeDesEmployee.get(i).getAdressSuccursale().equals(adress) && !listeDesEmployee.get(i).getAdressSuccursale().isEmpty()){
                 count++;
-                employeeSelected.add(listeDesEmployee.get(i));
+                boolean check = true;
+                for (short k = 0; k < employeeSelected.size(); k++)
+                    if (listeDesEmployee.get(i).getAdressSuccursale().equals(employeeSelected.get(k).getAdressSuccursale()))
+                        check = false;
+                if (check)
+                    employeeSelected.add(listeDesEmployee.get(i));
             }
         }
 

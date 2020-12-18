@@ -16,8 +16,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.novigrad30.Class.Client.Client;
 import com.example.novigrad30.Class.Demande.Demande;
+import com.example.novigrad30.Class.Staff.EmployeHelperClass;
 import com.example.novigrad30.MainActivity;
 import com.example.novigrad30.R;
+import com.example.novigrad30.client.PortailClient;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
@@ -33,7 +35,10 @@ import java.io.IOException;
 
 public class GettingDocs extends AppCompatActivity implements View.OnClickListener /*  implementing click listener */ {
 
-    //a referejce to the storage database
+    private static EmployeHelperClass employeeSelected = Pc_form.getCurrentUser();
+    private static Client currentClient = PortailClient.getCurrentClient();
+
+    //a reference to the storage database
     private StorageReference storageReference ;
     //a constant to track the file chooser intent
     private static final int PICK_IMAGE_REQUEST = 234;
@@ -124,8 +129,8 @@ public class GettingDocs extends AppCompatActivity implements View.OnClickListen
                 //soumettre la  demande en ajoutant la demande dans la liste des demandes de la succursale
                 DatabaseReference SuccursaleDB;
 
-                SuccursaleDB = FirebaseDatabase.getInstance().getReference("SUCCURSALES/Succursale Toronto" + /*currentUser.getNomSuccursale() +*/ "/Demandes");
-                SuccursaleDB.child(MainActivity.getCurrentClient().getNom() + " " + MainActivity.getCurrentClient().getPrenom()+"/"+SelectionServicesClients.getChosen_one().getServiceName()).setValue(demande);
+                SuccursaleDB = FirebaseDatabase.getInstance().getReference("SUCCURSALES/" + employeeSelected.getNomSuccursale() + "/Demandes");
+                SuccursaleDB.child(currentClient.getNom() + " " + currentClient.getPrenom()).setValue(demande);
                 //indiquez à l'utilisateur
                 Toast.makeText(GettingDocs.this, "Demande soumise! ", Toast.LENGTH_SHORT).show();
             }

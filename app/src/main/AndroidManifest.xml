@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".client.dialogbox.dialogChoice"></activity>
+        <activity android:name=".Class.Demande.demandeList"></activity>
+        <activity android:name=".staff.loading.loadingDemande" />
+        <activity android:name=".client.dialogbox.dialogChoice" />
         <activity android:name=".client.dialogbox.dialogRating" />
         <activity android:name=".client.functions.listAsked" />
         <activity android:name=".client.rating" />

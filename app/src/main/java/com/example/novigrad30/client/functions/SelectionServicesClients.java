@@ -30,6 +30,7 @@ public class SelectionServicesClients extends AppCompatActivity implements Servi
 
 
     private static EmployeHelperClass currentUser = /* MainActivity.get_a_staff_for_test();*/ listAsked.getSuccursaleSelected();
+
     public static Service chosen_one;
     public static String choice_service;
     List<ServicesHelperClass> a;
@@ -130,6 +131,9 @@ public class SelectionServicesClients extends AppCompatActivity implements Servi
     }
 
 
+    public static EmployeHelperClass getCurrentUser() {
+        return currentUser;
+    }
 
     public static Service getChosen_one(){return  chosen_one;}
 

@@ -3,6 +3,7 @@ package com.example.novigrad30.staff.functions;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.ListView;
 
 import com.example.novigrad30.Class.Staff.EmployeHelperClass;
 import com.example.novigrad30.R;
+import com.example.novigrad30.client.PortailClient;
 import com.example.novigrad30.client.dialogbox.ServiceDialogue;
 import com.example.novigrad30.Class.Service.ServicesHelperClass;
 import com.example.novigrad30.ServicesList;
@@ -29,7 +31,7 @@ public class SupprimerServiceSuccursale extends AppCompatActivity implements Ser
 
     private static EmployeHelperClass currentUser = PortailSuccursale.getCurrentUser();
     Boolean confirm;
-    List<ServicesHelperClass> u;
+    List<ServicesHelperClass> newServiceSuccursaleList;
     ListView listViewService;
     ServicesHelperClass ServiceSelect;
     DatabaseReference SuccursaleDB;
@@ -46,19 +48,19 @@ public class SupprimerServiceSuccursale extends AppCompatActivity implements Ser
         listViewService=(ListView)findViewById(R.id.ListViewService  );
 
         //Copie des donnees recu dans l'Activité precedente
-        u = new ArrayList<>();
+        newServiceSuccursaleList = new ArrayList<>();
 
-        u = PortailSuccursale.getSuccursalServiceList();
+        newServiceSuccursaleList = PortailSuccursale.getSuccursalServiceList();
         //u.add(a);
 
-        ServicesList adapter = new ServicesList( SupprimerServiceSuccursale.this, u);
+        ServicesList adapter = new ServicesList( SupprimerServiceSuccursale.this, newServiceSuccursaleList);
         listViewService.setAdapter( adapter );
 
         //Clickable
         listViewService.setOnItemLongClickListener( new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                ServiceSelect = u.get(position);
+                ServiceSelect = newServiceSuccursaleList.get(position);
                 showConfirmationDialog(ServiceSelect.getServiceId(),ServiceSelect.getNom(),ServiceSelect.getDocuments(),ServiceSelect.getFormulaireRequis());
                 return true;
             }
@@ -117,8 +119,22 @@ public class SupprimerServiceSuccursale extends AppCompatActivity implements Ser
     private void deleteService(String name) {
         DatabaseReference databaseServiceSuppression = FirebaseDatabase.getInstance().getReference("SUCCURSALES/" + currentUser.getNomSuccursale() + "/Services Offerts");
 
-        databaseServiceSuppression.child(name).setValue(null); // donner une valeur nulle a a l'element en questio;
+        //Mise à jour de la base de donnée locale
+        for (short i = 0; i < newServiceSuccursaleList.size(); i++){
+            if(newServiceSuccursaleList.get(i).getNom() == name)
+                newServiceSuccursaleList.remove(newServiceSuccursaleList.get(i));
+        }
+        PortailSuccursale.setSuccursalServiceList(newServiceSuccursaleList);
+
+        //Mise à jour de la base de donnée sur le cloud
+        databaseServiceSuppression.child(name).setValue(null);
+
+        Intent intent = new Intent(getApplicationContext(), SupprimerServiceSuccursale.class);
+        startActivity(intent);
+
         Toast.makeText(this, "Service deleted ", Toast.LENGTH_SHORT).show();
+        finish();
+
 
     }
 

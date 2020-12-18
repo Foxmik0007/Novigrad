@@ -28,12 +28,12 @@ import java.util.List;
 
 public class listAsked extends AppCompatActivity implements dialogRating.dialogListener, dialogChoice.dialogListener {
 
-        static EmployeHelperClass succursaleSelected = new EmployeHelperClass();
-        String suppress = new String();
+        static EmployeHelperClass succursaleSelected;
+        String suppress;
         ListView list;
-        private static List<EmployeHelperClass> succursaleList = new ArrayList<>();
-        private static List<String> nomSuccursale = new ArrayList<>();
-        private static List<ServicesHelperClass> currentService = new ArrayList<>();
+        private static List<EmployeHelperClass> succursaleList;
+        private static List<String> nomSuccursale;
+        private static List<ServicesHelperClass> currentService;
 
 
         DatabaseReference succursaleDB;
@@ -43,6 +43,13 @@ public class listAsked extends AppCompatActivity implements dialogRating.dialogL
 protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView( R.layout.activity_see_serive );
+
+        succursaleSelected = new EmployeHelperClass();
+        nomSuccursale = new ArrayList<>();
+        currentService = new ArrayList<>();
+        succursaleList = new ArrayList<>();
+        suppress = new String();
+
         list = (ListView)findViewById(R.id.ListViewService);
         succursaleDB = FirebaseDatabase.getInstance().getReference("SUCCURSALES");
         succursaleServiceDB = FirebaseDatabase.getInstance().getReference("SUCCURSALES/" + succursaleSelected.getNomSuccursale() + "/Services Offerts");

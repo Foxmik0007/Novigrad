@@ -34,10 +34,11 @@ tools:context=".client.functions.GettingDocs">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="608dp"
+        android:layout_width="294dp"
+        android:layout_height="496dp"
         android:layout_below="@id/linearLayout"
-        android:layout_marginTop="75dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="118dp"
         android:layout_marginBottom="15dp" />
 
     <Button

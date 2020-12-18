@@ -18,6 +18,7 @@ import com.example.novigrad30.Class.Service.ServicesHelperClass;
 import com.example.novigrad30.staff.functions.SupprimerServiceSuccursale;
 import com.example.novigrad30.staff.functions.VoirDemandes;
 import com.example.novigrad30.staff.functions.VoirServices;
+import com.example.novigrad30.staff.loading.loadingDemande;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -105,7 +106,7 @@ public class PortailSuccursale extends AppCompatActivity {
         voirDemande.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), VoirDemandes.class);
+                Intent intent = new Intent(getApplicationContext(), loadingDemande.class);
                 startActivity(intent);
             }
         });
@@ -184,5 +185,9 @@ public class PortailSuccursale extends AppCompatActivity {
 
     public static List<ServicesHelperClass> getSuccursalServiceList() {
         return SuccursalServiceList;
+    }
+
+    public static void setSuccursalServiceList(List<ServicesHelperClass> succursalServiceList) {
+        SuccursalServiceList = succursalServiceList;
     }
 }

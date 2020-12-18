@@ -9,12 +9,16 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.novigrad30.Class.Demande.Demande;
+import com.example.novigrad30.Class.Staff.EmployeHelperClass;
 import com.example.novigrad30.R;
 
 public class Pc_form extends AppCompatActivity {
 
    public static EditText nom_pc , prenom_pc , date_pc , adresse_pc, choix;
-    Button suivant_pc ;
+   Button suivant_pc ;
+
+   private static EmployeHelperClass currentUser = SelectionServicesClients.getCurrentUser();
+
    public static Demande demande = new Demande();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,5 +52,10 @@ public class Pc_form extends AppCompatActivity {
     public static Demande get_demande(){ return demande;}
     public static String getData(){
         String data = "Nom : "+ nom_pc.getText().toString().trim()+"/Prenom : "+prenom_pc.getText().toString().trim()+"/Naissance :"+ date_pc.getText().toString().trim()+"/Permis Type : "+choix.getText().toString().trim();
-        return data;}
+        return data;
+    }
+
+    public static EmployeHelperClass getCurrentUser() {
+        return currentUser;
+    }
 }
