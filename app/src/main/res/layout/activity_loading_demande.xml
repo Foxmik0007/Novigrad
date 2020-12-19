@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".staff.loading.loadingDemande">
+    tools:context=".staff.loading.loadingDemande" >
 
-    <TextView
-        android:id="@+id/textView25"
-        android:layout_width="91dp"
-        android:layout_height="42dp"
-        android:text="loading"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie"
+        android:layout_width="146dp"
+        android:layout_height="107dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.445" />
+        app:lottie_autoPlay="true"
+        app:lottie_rawRes="@raw/brahma_logo_speed"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

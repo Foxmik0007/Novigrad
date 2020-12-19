@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.example.novigrad30.*;
 import com.example.novigrad30.Class.Demande.Demande;
 import com.example.novigrad30.Class.Staff.EmployeHelperClass;
@@ -28,6 +29,7 @@ public class loadingDemande extends AppCompatActivity {
     private static List<Demande> listeDesDemandes;
     DatabaseReference DemandeDB;
     private static EmployeHelperClass currentUser;
+    LottieAnimationView lottieAnimationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +37,9 @@ public class loadingDemande extends AppCompatActivity {
 
         currentUser = PortailSuccursale.getCurrentUser();
         DemandeDB = FirebaseDatabase.getInstance().getReference("SUCCURSALES/"  + currentUser.getNomSuccursale() + "/Demandes" );
+        lottieAnimationView = (LottieAnimationView) findViewById(R.id.lottie);
+
+        //lottieAnimationView.animate().translationY(1000).setDuration(1000).setStartDelay(4000);
 
         listeDesDemandes = new ArrayList<>();
         Handler handler = new Handler();

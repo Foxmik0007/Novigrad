@@ -11,7 +11,7 @@
         android:id="@+id/connect"
         android:layout_width="193dp"
         android:layout_height="55dp"
-        android:layout_marginTop="216dp"
+        android:layout_marginTop="164dp"
         android:background="#FFFFFF"
         android:text="Se Connecter"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,5 +43,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/connect"
         app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/testing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TESTING"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/register" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

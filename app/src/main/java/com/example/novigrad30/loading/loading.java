@@ -14,6 +14,7 @@ import com.example.novigrad30.MainActivity;
 import com.example.novigrad30.R;
 import com.example.novigrad30.Class.Service.ServicesHelperClass;
 import com.example.novigrad30.SignUPRedirection;
+import com.example.novigrad30.Test_Activity;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -33,13 +34,14 @@ public class loading extends AppCompatActivity {
     public static List<Client>clients;
     public static List <ServicesHelperClass> products;
 
-    private Button connect, register;
+    private Button connect, register, testing;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loading);
         connect = (Button) findViewById(R.id.connect);
         register = (Button) findViewById(R.id.register);
+        testing = (Button) findViewById(R.id.testing);
 
         crew = new ArrayList<>();
         clients = new ArrayList<>();
@@ -70,6 +72,14 @@ public class loading extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(loading.this, SignUPRedirection.class);
+                startActivity(intent);
+            }
+        });
+
+        testing.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Test_Activity.class);
                 startActivity(intent);
             }
         });
