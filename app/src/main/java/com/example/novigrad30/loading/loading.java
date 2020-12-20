@@ -14,7 +14,7 @@ import com.example.novigrad30.MainActivity;
 import com.example.novigrad30.R;
 import com.example.novigrad30.Class.Service.ServicesHelperClass;
 import com.example.novigrad30.SignUPRedirection;
-import com.example.novigrad30.Test_Activity;
+import com.example.novigrad30.TestPackage.Test_Activity;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
