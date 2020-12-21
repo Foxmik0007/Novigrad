@@ -20,15 +20,6 @@ public class Test_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ztest_);
 
-        btnImage = (Button) findViewById(R.id.ImBtn);
-
-
-        btnImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
 
     }
 }
